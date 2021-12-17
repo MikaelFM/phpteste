@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>OLA</p>
+    <form action="index.php">
+        <input type="text" name="" id="">
+        <input type="submit" value="vai">
+    </form>
+    <script>
+        url_atual = window.location.href;
+        alert(quebra_url(url_atual));
+        function quebra_url(url) {
+            return url.split('=')[1];
+        }
+
+        const fs = require('fs');
+        const ytdl = require('ytdl-core');
+
+        const videos = [
+            'https://www.youtube.com/watch?v=YxFAR8wY6k0',
+        ];
+
+        const pathToSave = '/home/joaotinti75/Documentos/';
+
+        videos.forEach((video, index) => {
+            ytdl(video).pipe(fs.createWriteStream(pathToSave + 'video' + index + '.mp4'));
+        })
+    </script>
+</body>
+
+</html>
